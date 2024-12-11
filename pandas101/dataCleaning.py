@@ -23,18 +23,18 @@ print('Numerical columns :', num_col)
 df[cat_col].nunique()
 
 # 50 unique tickets
-df['Ticket'].unique()[:50]
+print(df['Ticket'].unique()[:50])
 
 # Drop
 df1 = df.drop(columns=['Name', 'Ticket'])
-df1.shape
+print(df1.shape)
 
 # Handle missing data
 round((df1.isnull().sum()/df1.shape[0])*100, 2)
 
 df2 = df1.drop(columns='Cabin') # drop column
 df2.dropna(subset=['Embarked'], axis=0, inplace=True) # drop null values
-df2.shape
+print(df2.shape)
 
 
 # mean imputation
